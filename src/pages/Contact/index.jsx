@@ -78,7 +78,7 @@ export default function Contact() {
               <div className="text-center">
                 <div className="text-5xl mb-3">📍</div>
                 <div className="font-serif text-forest-dark text-lg">Krishna Surbhi Sanctuary</div>
-                <div className="text-forest/55 text-sm mt-1">Rohtak, Haryana</div>
+                <div className="text-forest/55 text-sm mt-1">New Delhi</div>
                 <a
                   href="https://maps.google.com"
                   target="_blank"

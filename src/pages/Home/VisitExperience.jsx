@@ -94,7 +94,7 @@ export default function VisitExperience() {
           <div className="mt-8 bg-forest-dark/5 rounded-2xl px-7 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div className="flex flex-wrap gap-8 text-sm">
               <div><span className="text-forest-dark font-semibold">Hours:</span><span className="text-brown/50 ml-1.5">Tue – Sun · 7am – 6pm</span></div>
-              <div><span className="text-forest-dark font-semibold">Location:</span><span className="text-brown/50 ml-1.5">Rohtak, Haryana</span></div>
+              <div><span className="text-forest-dark font-semibold">Location:</span><span className="text-brown/50 ml-1.5">Sainik Farm, New Delhi</span></div>
               <div><span className="text-forest-dark font-semibold">Book 48h ahead</span></div>
             </div>
             <a href="tel:+919800000000" className="text-forest font-semibold text-sm">+91 98000 00000</a>
