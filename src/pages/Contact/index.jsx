@@ -41,7 +41,7 @@ export default function Contact() {
                 {
                   icon: <MapPin size={20} className="text-saffron" />,
                   label: 'Find Us',
-                  lines: ['Village Rohtak Road', 'Rohtak, Haryana 124001', 'India'],
+                  lines: ['Sainik Farm','Delhi - 110062', 'India'],
                 },
                 {
                   icon: <Phone size={20} className="text-saffron" />,

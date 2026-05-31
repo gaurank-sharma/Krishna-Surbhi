@@ -144,7 +144,7 @@ export default function Visit() {
               {
                 icon: <MapPin size={22} className="text-saffron" />,
                 title: 'Location',
-                lines: ['Village Rohtak Road', 'Rohtak, Haryana 124001', '~45 min from Delhi'],
+                lines: ['Sainik Farm','Delhi - 110062', 'India'],
               },
               {
                 icon: <Phone size={22} className="text-saffron" />,

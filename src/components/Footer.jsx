@@ -73,7 +73,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-4">
               <li className="flex items-start gap-2.5 text-white/75 text-sm">
                 <MapPin size={14} className="text-saffron mt-0.5 flex-shrink-0" />
-                <span>Village Rohtak Road, Haryana 124001, India</span>
+                <span>Sainik Farm, Delhi 110062, India </span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone size={14} className="text-saffron flex-shrink-0" />
