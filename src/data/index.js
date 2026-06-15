@@ -13,7 +13,7 @@ export const COWS = [
     age: '7 years',
     rescued: 'January 2019',
     tag: 'Therapy Cow',
-    story: 'Found injured on a highway outside Rohtak, Ganga arrived frightened and malnourished. After months of patient healing, she became the soul of our sanctuary — now leading meditation sessions with her remarkable calm.',
+    story: 'Found injured on a highway outside Delhi, Ganga arrived frightened and malnourished. After months of patient healing, she became the soul of our sanctuary — now leading meditation sessions with her remarkable calm.',
     fullStory: 'Ganga was found by a truck driver who called our rescue line at 2am. She had a fractured leg and severe malnutrition. Our vet team worked through the night. Today, she is our most requested therapy cow and has helped over 400 visitors find peace.',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUAELxBZqtFO4lfCUOIescfevlvrukl8yu9A&s',
     palette: { bg: '#FFF8ED', bgEnd: '#FFECC8', accent: '#D4722A', tagBg: '#FDE8C0', tagText: '#8B4513' },
@@ -92,10 +92,9 @@ export const COWS = [
 
 export const EXPERIENCES = [
   {
-    icon: '🧘',
-    title: 'Cow Therapy Session',
+    title: 'Cow Hugging Therapy',
     tagline: 'Sit. Breathe. Be.',
-    desc: 'A 90-minute guided session where you sit in stillness with our gentlest cows. No agenda, no performance — just the profound healing of being near these sacred animals. Scientifically documented to reduce cortisol and restore calm.',
+    desc: 'A 90-minute guided session where you sit, breathe, and gently embrace our calmest cows. No agenda, no performance — just the profound healing of being near these sacred animals. Documented to lower cortisol and restore deep calm.',
     duration: '90 min',
     price: '₹800 / person',
     groupSize: 'Max 6 people',
@@ -103,26 +102,24 @@ export const EXPERIENCES = [
     includes: ['Guided breathing exercise', 'Introduction to 2-3 therapy cows', 'Reflection journal', 'Herbal tea'],
   },
   {
-    icon: '🌿',
-    title: 'Sanctuary Walk & Feed',
-    tagline: 'Walk. Connect. Feed.',
-    desc: 'A guided 2-hour morning walk through our sanctuary. Learn each cow\'s rescue story, understand their individual personalities, and experience the profound joy of feeding them fresh grass from your own hands.',
-    duration: '2 hours',
-    price: '₹500 / person',
-    groupSize: 'Max 12 people',
-    image: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=700&q=80',
-    includes: ['Guided sanctuary tour', 'Cow feeding experience', 'Rescue story narration', 'Organic farm breakfast'],
-  },
-  {
-    icon: '🌅',
-    title: 'Sunrise Meditation',
+    title: 'Meditation & Spiritual Workshops',
     tagline: 'Dawn. Stillness. Sacred.',
-    desc: 'Arrive before dawn and greet the sun surrounded by cows in our open meadow. A moving combination of ancient Vedic ritual, guided meditation, and the raw emotional power of sacred animals at the edge of dawn.',
+    desc: 'Greet the sunrise surrounded by cows in our open meadow. A moving blend of ancient Vedic ritual, guided meditation, and spiritual workshops led at the quiet edge of dawn — a reset for body and spirit.',
     duration: '3 hours',
     price: '₹1,200 / person',
     groupSize: 'Max 8 people',
     image: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=700&q=80',
     includes: ['Pre-dawn arrival', 'Vedic sunrise ritual', 'Guided meditation', 'Sattvic breakfast'],
+  },
+  {
+    title: 'Tree Plantation Activities',
+    tagline: 'Plant. Nurture. Belong.',
+    desc: 'Put your hands in the earth and grow the sanctuary forest. Plant native trees that shade our herds, restore the land, and stand as a living mark of your visit for decades to come.',
+    duration: '2 hours',
+    price: '₹500 / person',
+    groupSize: 'Max 15 people',
+    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=700&q=80',
+    includes: ['Native sapling to plant', 'Guided plantation walk', 'Soil & care briefing', 'Organic farm breakfast'],
   },
   {
     icon: '👨‍👩‍👧',
@@ -307,7 +304,7 @@ export const STATS = [
 ];
 
 export const TIMELINE = [
-  { year: '2018', title: 'One Calf, One Promise', desc: 'Founder Meena Devi rescues her first calf from a rain-soaked highway. Krishna Surbhi is born on a quarter-acre plot in Haryana.' },
+  { year: '2018', title: 'One Calf, One Promise', desc: 'Founder Meena Devi rescues her first calf from a rain-soaked highway. Krishna Surbhi is born on a quarter-acre plot in Sainik Farm, New Delhi.' },
   { year: '2019', title: 'The First Fifty', desc: 'Word spreads. Volunteers arrive. The first 50 cows are rescued and a formal rescue helpline is established.' },
   { year: '2020', title: 'Sanctuary Expands', desc: 'Land expands to 12 acres with a dedicated veterinary unit, cow hospital, and volunteer quarters.' },
   { year: '2021', title: 'Healing Programme Launches', desc: 'After documented evidence of visitors\' mental health improvements, our formal Cow Therapy Programme officially launches.' },

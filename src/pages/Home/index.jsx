@@ -1,27 +1,36 @@
 import HeroSection from './HeroSection';
-import ImpactStats from './ImpactStats';
-import OurStory from './OurStory';
 import MeetTheCows from './MeetTheCows';
 import VisitExperience from './VisitExperience';
-import BrandPillars from './BrandPillars';
+import BuildSanctuary from './BuildSanctuary';
+import GalleryPreview from './GalleryPreview';
+import FounderMessage from './FounderMessage';
 import SupportDonate from './SupportDonate';
-import Testimonials from './Testimonials';
-import CommunityBlog from './CommunityBlog';
-import NewsletterCTA from './NewsletterCTA';
 
+// Homepage kept deliberately clean and focused — the exact flow from the
+// design guide: an immersive sanctuary experience, not a traditional NGO site.
 export default function Home() {
   return (
     <>
+      {/* Hero */}
       <HeroSection />
-      <ImpactStats />
-      <OurStory />
+
+      {/* Animal Stories */}
       <MeetTheCows />
+
+      {/* Experience Krishna Surbhi */}
       <VisitExperience />
-      <BrandPillars />
+
+      {/* Build Krishna Surbhi */}
+      <BuildSanctuary />
+
+      {/* Gallery Preview */}
+      <GalleryPreview />
+
+      {/* Founder Message */}
+      <FounderMessage />
+
+      {/* Donation CTA */}
       <SupportDonate />
-      <Testimonials />
-      <CommunityBlog />
-      <NewsletterCTA />
     </>
   );
 }

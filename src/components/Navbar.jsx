@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Heart } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { NAV_LINKS } from '../data';
 import { useModal } from '../context/ModalContext';
 
@@ -35,12 +35,12 @@ export default function Navbar() {
   const isTransparent = isHome && !scrolled;
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isTransparent ? 'bg-transparent' : 'bg-cream shadow-md border-b border-forest/8'
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b ${
+      isTransparent ? 'bg-transparent border-white/15' : 'bg-cream shadow-md border-forest/8'
     }`}>
-      <div className="max-w-7xl mx-auto px-5 md:px-10 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-5 md:px-10 py-4 flex items-center justify-between relative">
 
-        {/* Logo */}
+        {/* Logo — left */}
         <Link to="/" className="flex items-center gap-2.5 flex-shrink-0 group">
           <CowLogo light={isTransparent} />
           <div>
@@ -53,26 +53,31 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex items-center gap-7">
+        {/* Desktop nav — centered */}
+        <nav className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
           {NAV_LINKS.map(({ label, href }) => {
             const active = pathname === href;
             return (
               <Link key={label} to={href}
-                className={`text-[11px] tracking-widest uppercase font-medium transition-colors relative group ${
-                  isTransparent ? 'text-white/75 hover:text-white' : active ? 'text-forest-dark' : 'text-forest/60 hover:text-forest-dark'
+                className={`text-[11px] tracking-[0.18em] uppercase font-medium transition-colors relative group ${
+                  isTransparent ? 'text-white/80 hover:text-white' : active ? 'text-forest-dark' : 'text-forest/60 hover:text-forest-dark'
                 }`}>
                 {label}
-                <span className={`absolute -bottom-0.5 left-0 h-px bg-saffron transition-all duration-200 ${active ? 'w-full' : 'w-0 group-hover:w-full'}`} />
+                <span className={`absolute -bottom-1.5 left-0 h-px bg-saffron transition-all duration-200 ${active ? 'w-full' : 'w-0 group-hover:w-full'}`} />
               </Link>
             );
           })}
         </nav>
 
+        {/* Right — outlined CTA box (Shakti-style) + mobile toggle */}
         <div className="flex items-center gap-3">
           <button onClick={() => openDonate()}
-            className="hidden md:flex items-center gap-1.5 bg-saffron text-white text-[10px] font-bold tracking-wider uppercase px-5 py-2.5 rounded-full hover:bg-saffron/85 active:scale-95 transition-all">
-            <Heart size={11} fill="white" /> Donate
+            className={`hidden md:inline-flex items-center justify-center text-[10px] font-semibold tracking-[0.22em] uppercase px-6 py-3 border rounded-sm transition-all ${
+              isTransparent
+                ? 'border-white/55 text-white hover:bg-white hover:text-forest-dark'
+                : 'border-forest/35 text-forest-dark hover:bg-forest hover:text-white hover:border-forest'
+            }`}>
+            Donate
           </button>
           <button className="lg:hidden p-1.5" onClick={() => setMenuOpen(p => !p)} aria-label="Toggle menu">
             {menuOpen

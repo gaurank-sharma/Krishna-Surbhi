@@ -4,7 +4,7 @@ import PageHero from '../../components/PageHero';
 import FadeIn from '../../components/FadeIn';
 import SectionLabel from '../../components/SectionLabel';
 import { TIMELINE } from '../../data';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Target, Sparkles } from 'lucide-react';
 import { useModal } from '../../context/ModalContext';
 
 const TEAM = [
@@ -29,7 +29,7 @@ export default function OurStory() {
   const { openDonate } = useModal();
 
   return (
-    <div className="bg-cream w-full h-full object-contain">
+    <div className="bg-cream ">
       <PageHero
         label="Krishna Surbhi"
         title="Our Story"
@@ -63,7 +63,7 @@ export default function OurStory() {
               <em className="italic text-forest">and a life changed forever</em>
             </h2>
             <p className="text-brown/75 leading-relaxed mb-5">
-              It was January 2018 and Meena Devi was driving home through the outskirts of Rohtak when
+              It was January 2018 and Meena Devi was driving home through the outskirts of Delhi when
               headlights caught something in the rain. A calf — no more than three months old — lay
               injured in the middle of the road, too weak to move.
             </p>
@@ -102,19 +102,21 @@ export default function OurStory() {
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                icon: '🎯',
+                Icon: Target,
                 heading: 'Our Mission',
                 text: 'To rescue, rehabilitate, and provide lifelong sanctuary to abused and abandoned cows in India — and to share the profound healing power of the human-bovine bond with all who seek it.',
               },
               {
-                icon: '🌟',
+                Icon: Sparkles,
                 heading: 'Our Vision',
                 text: 'A world where every cow is treated with sacred reverence, and where the ancient wisdom of the human-animal connection is accessible to all who need healing, belonging, and peace.',
               },
             ].map((item) => (
               <FadeIn key={item.heading} delay={0.1}>
                 <div className="bg-white/8 border border-white/12 rounded-2xl p-8 h-full">
-                  <div className="text-4xl mb-5">{item.icon}</div>
+                  <div className="w-12 h-12 rounded-2xl bg-saffron/15 border border-saffron/25 flex items-center justify-center mb-5">
+                    <item.Icon size={20} className="text-saffron" />
+                  </div>
                   <h3 className="font-serif text-2xl text-white mb-4">{item.heading}</h3>
                   <p className="text-white/55 leading-relaxed">{item.text}</p>
                 </div>
@@ -236,7 +238,7 @@ export default function OurStory() {
                 onClick={() => openDonate()}
                 className="inline-flex items-center justify-center gap-2 bg-saffron text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-saffron/85 transition-all"
               >
-                🙏 Donate Now
+                Donate Now <ArrowRight size={14} />
               </button>
             </div>
           </FadeIn>

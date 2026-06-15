@@ -26,7 +26,7 @@ export default function OurStory() {
               </h2>
 
               <p className="text-brown/65 leading-relaxed mb-5">
-                January 2018. A highway outside Rohtak. A truck driver's phone call at 2am. And a
+                January 2018. A highway outside Delhi. A truck driver's phone call at 2am. And a
                 school teacher named Meena Devi who stopped her car, carried an injured calf to
                 safety, and stayed until morning.
               </p>
