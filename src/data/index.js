@@ -2,6 +2,7 @@ export const NAV_LINKS = [
   { label: 'Our Story', href: '/our-story' },
   { label: 'Meet the Cows', href: '/meet-the-cows' },
   { label: 'Visit', href: '/visit' },
+  { label: 'Volunteer', href: '/volunteers/uncle' },
   { label: 'Support', href: '/support' },
   { label: 'Community', href: '/community' },
   { label: 'Contact', href: '/contact' },
