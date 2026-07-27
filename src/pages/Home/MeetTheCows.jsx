@@ -79,7 +79,7 @@ export default function MeetTheCows() {
                       {cow.story}
                     </p>
                     <Link
-                      to="/meet-the-cows"
+                      to={`/meet-the-cows/${cow.id}`}
                       className="inline-flex items-center gap-2 bg-saffron text-white text-[11px] font-bold tracking-wider uppercase px-7 py-3.5 rounded-full hover:bg-saffron/85 active:scale-95 transition-all shadow-lg"
                     >
                       Read More <ArrowRight size={13} />

@@ -3,97 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageHero from '../../components/PageHero';
 import FadeIn from '../../components/FadeIn';
-import SectionLabel from '../../components/SectionLabel';
 import { COWS } from '../../data';
-import { useModal } from '../../context/ModalContext';
-import { X, ArrowRight, Heart } from 'lucide-react';
+import { ArrowRight, Heart } from 'lucide-react';
 
 const ALL_TAGS = ['All', ...new Set(COWS.map((c) => c.tag))];
 
-/* ── Cow story modal ── */
-function CowModal({ cow, onClose }) {
-  const p = cow.palette;
-  const [imgErr, setImgErr] = useState(false);
-
-  return (
-    <motion.div
-      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[60] flex items-center justify-center p-4"
-      style={{ backgroundColor: 'rgba(27,67,50,0.82)' }}
-      onClick={onClose}
-    >
-      <motion.div
-        initial={{ opacity: 0, scale: 0.94, y: 24 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.94 }}
-        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        className="bg-white rounded-3xl max-w-2xl w-full shadow-2xl overflow-hidden"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="grid sm:grid-cols-5">
-          {/* Photo panel */}
-          <div className="sm:col-span-2 relative overflow-hidden min-h-[260px]"
-            style={{ background: `linear-gradient(145deg, ${p.bg} 0%, ${p.bgEnd} 100%)` }}
-          >
-            {!imgErr ? (
-              <img
-                src={cow.image}
-                alt={cow.name}
-                className="absolute inset-0 w-full h-full object-cover"
-                onError={() => setImgErr(true)}
-              />
-            ) : (
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-8xl">{p.emoji}</span>
-              </div>
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-            <div className="absolute bottom-4 left-4">
-              <div
-                className="text-[9px] tracking-[0.22em] font-bold uppercase px-3 py-1.5 rounded-full"
-                style={{ backgroundColor: p.tagBg, color: p.tagText }}
-              >
-                {cow.tag}
-              </div>
-            </div>
-          </div>
-
-          {/* Story panel */}
-          <div className="sm:col-span-3 p-7 flex flex-col">
-            <div className="flex justify-between items-start mb-1">
-              <h2 className="font-serif text-3xl" style={{ color: p.accent }}>{cow.name}</h2>
-              <button onClick={onClose} className="w-8 h-8 flex items-center justify-center rounded-full bg-forest/8 text-forest hover:bg-forest/15 transition-colors flex-shrink-0 ml-2">
-                <X size={15} />
-              </button>
-            </div>
-            <div className="text-brown/40 text-sm mb-4">{cow.age} · Rescued {cow.rescued}</div>
-            <p className="text-brown/70 text-sm leading-relaxed flex-grow">{cow.fullStory}</p>
-            <div className="mt-6 pt-5 border-t border-forest/8">
-              <p className="text-forest-dark text-xs font-semibold mb-3">Support {cow.name}'s care</p>
-              <div className="flex gap-2">
-                <button
-                  style={{ backgroundColor: p.accent }}
-                  className="flex-1 text-white text-xs font-semibold py-3 rounded-xl flex items-center justify-center gap-1.5 hover:opacity-90 transition-opacity"
-                >
-                  <Heart size={11} fill="white" /> Adopt Her
-                </button>
-                <button
-                  className="flex-1 border text-xs font-semibold py-3 rounded-xl hover:bg-forest/5 transition-colors"
-                  style={{ borderColor: p.accent, color: p.accent }}
-                >
-                  Sponsor Feed
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-    </motion.div>
-  );
-}
-
-/* ── Cow card: real photo + gradient fallback ── */
-function CowCard({ cow, onClick, delay }) {
+/* ── Cow card: real photo + gradient fallback, links to the cow's own page ── */
+function CowCard({ cow, delay }) {
   const p = cow.palette;
   const [imgErr, setImgErr] = useState(false);
 
@@ -104,9 +20,8 @@ function CowCard({ cow, onClick, delay }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.4, delay }}
-      onClick={onClick}
-      className="rounded-2xl overflow-hidden cursor-pointer group shadow-sm hover:shadow-xl transition-all duration-400 bg-white"
-    >
+      className="rounded-2xl overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-400 bg-white"
+    ><Link to={`/meet-the-cows/${cow.id}`} className="block">
       {/* ── Photo area (real image or gradient fallback) ── */}
       <div
         className="relative overflow-hidden"
@@ -165,23 +80,42 @@ function CowCard({ cow, onClick, delay }) {
           </span>
         </div>
       </div>
+      </Link>
     </motion.article>
+  );
+}
+
+/* ── Small linked thumbnail used in the "Come Meet Them" teaser grid ── */
+function MiniCowThumb({ cow }) {
+  const [err, setErr] = useState(false);
+  return (
+    <Link
+      to={`/meet-the-cows/${cow.id}`}
+      className="rounded-2xl overflow-hidden relative h-28 block"
+      style={{ background: `linear-gradient(135deg, ${cow.palette.bg} 0%, ${cow.palette.bgEnd} 100%)` }}
+    >
+      {!err ? (
+        <img src={cow.image} alt={cow.name} className="absolute inset-0 w-full h-full object-cover" onError={() => setErr(true)} />
+      ) : (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span className="text-4xl">{cow.palette.emoji}</span>
+        </div>
+      )}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+      <div className="absolute bottom-2 left-3">
+        <div className="font-serif text-sm text-white">{cow.name}</div>
+      </div>
+    </Link>
   );
 }
 
 export default function MeetTheCows() {
   const [activeTag, setActiveTag] = useState('All');
-  const [selectedCow, setSelectedCow] = useState(null);
-  const { openDonate } = useModal();
 
   const filtered = activeTag === 'All' ? COWS : COWS.filter((c) => c.tag === activeTag);
 
   return (
     <div className="bg-cream">
-      <AnimatePresence>
-        {selectedCow && <CowModal cow={selectedCow} onClose={() => setSelectedCow(null)} />}
-      </AnimatePresence>
-
       <PageHero
         label="500+ Residents"
         title="Meet the Family"
@@ -218,53 +152,37 @@ export default function MeetTheCows() {
           <motion.div layout className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <AnimatePresence mode="popLayout">
               {filtered.map((cow, i) => (
-                <CowCard key={cow.name} cow={cow} onClick={() => setSelectedCow(cow)} delay={i * 0.05} />
+                <CowCard key={cow.id} cow={cow} delay={i * 0.05} />
               ))}
             </AnimatePresence>
           </motion.div>
         </div>
       </section>
 
-      {/* ── Adopt CTA ── */}
+      {/* ── Come meet them CTA ── */}
       <section style={{ background: 'linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%)' }} className="py-20 px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <div className="text-saffron text-[10px] tracking-[0.3em] font-semibold uppercase mb-4">Adoption Programme</div>
+                <div className="text-saffron text-[10px] tracking-[0.3em] font-semibold uppercase mb-4">Come Meet Them</div>
                 <h2 className="font-serif text-4xl text-white leading-tight mb-4">
-                  Give one of them <br /><em className="italic text-saffron">your name</em>
+                  Some bonds can't be <br /><em className="italic text-saffron">adopted from afar</em>
                 </h2>
                 <p className="text-white/55 leading-relaxed mb-8">
-                  Adopt a cow for ₹2,000/month. Receive monthly stories, photos, and a certificate of adoption.
+                  Visit the sanctuary, spend time with them in person, and let a real connection guide
+                  how you choose to get involved.
                 </p>
-                <button
-                  onClick={() => openDonate({ title: 'Adopt a Cow', id: 'adopt' })}
+                <Link
+                  to="/visit"
                   className="inline-flex items-center gap-2 bg-saffron text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-saffron/85 transition-all"
                 >
-                  <Heart size={13} fill="white" /> Adopt a Cow — ₹2,000/mo
-                </button>
+                  <Heart size={13} fill="white" /> Plan Your Visit
+                </Link>
               </div>
               <div className="grid grid-cols-2 gap-3">
                 {COWS.slice(0, 4).map((cow) => (
-                  <div key={cow.name} className="rounded-2xl overflow-hidden relative h-28"
-                    style={{ background: `linear-gradient(135deg, ${cow.palette.bg} 0%, ${cow.palette.bgEnd} 100%)` }}
-                  >
-                    {(() => {
-                      const [err, setErr] = useState(false);
-                      return !err ? (
-                        <img src={cow.image} alt={cow.name} className="absolute inset-0 w-full h-full object-cover" onError={() => setErr(true)} />
-                      ) : (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="text-4xl">{cow.palette.emoji}</span>
-                        </div>
-                      );
-                    })()}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-2 left-3">
-                      <div className="font-serif text-sm text-white">{cow.name}</div>
-                    </div>
-                  </div>
+                  <MiniCowThumb key={cow.id} cow={cow} />
                 ))}
               </div>
             </div>

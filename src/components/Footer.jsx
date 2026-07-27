@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Instagram, Facebook, Youtube, ArrowRight } from 'lucide-react';
-import { useModal } from '../context/ModalContext';
 
 const FOOTER_LINKS = {
   'About Krishna Surbhi': [
@@ -23,7 +22,7 @@ const FOOTER_LINKS = {
     { label: 'Community Initiatives', href: '/community' },
   ],
   Support: [
-    { label: 'Donate Now', href: '/support' },
+    { label: 'Support Our Work', href: '/support' },
     { label: 'Visit The Sanctuary', href: '/visit' },
     { label: 'Contact Us', href: '/contact' },
     { label: 'Blog', href: '/community' },
@@ -49,7 +48,6 @@ function SanctuarySilhouette() {
 }
 
 export default function Footer() {
-  const { openDonate } = useModal();
   const [email, setEmail] = useState('');
   const [done, setDone] = useState(false);
 
@@ -143,10 +141,10 @@ export default function Footer() {
             <a href="mailto:love@krishnasurbhi.org" className="flex items-center gap-2.5 text-white/75 text-sm hover:text-white transition-colors">
               <Mail size={15} className="text-saffron flex-shrink-0" /> love@krishnasurbhi.org
             </a>
-            <button onClick={() => openDonate()}
+            <Link to="/support"
               className="md:ml-auto bg-saffron text-white text-xs font-bold tracking-wider uppercase px-7 py-3 rounded-full hover:bg-saffron/85 transition-colors">
-              Donate Now
-            </button>
+              Join The Community
+            </Link>
           </div>
 
           <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/60">

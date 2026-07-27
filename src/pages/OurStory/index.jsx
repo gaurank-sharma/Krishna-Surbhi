@@ -5,7 +5,6 @@ import FadeIn from '../../components/FadeIn';
 import SectionLabel from '../../components/SectionLabel';
 import { TIMELINE } from '../../data';
 import { ArrowRight, Target, Sparkles } from 'lucide-react';
-import { useModal } from '../../context/ModalContext';
 
 const TEAM = [
   {
@@ -26,8 +25,6 @@ const TEAM = [
 ];
 
 export default function OurStory() {
-  const { openDonate } = useModal();
-
   return (
     <div className="bg-cream ">
       <PageHero
@@ -234,12 +231,12 @@ export default function OurStory() {
               >
                 Visit Us <ArrowRight size={14} />
               </Link>
-              <button
-                onClick={() => openDonate()}
+              <Link
+                to="/support"
                 className="inline-flex items-center justify-center gap-2 bg-saffron text-white font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-saffron/85 transition-all"
               >
-                Donate Now <ArrowRight size={14} />
-              </button>
+                Join the Community <ArrowRight size={14} />
+              </Link>
             </div>
           </FadeIn>
         </div>

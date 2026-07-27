@@ -1,5 +1,6 @@
 import HeroSection from './HeroSection';
 import MeetTheCows from './MeetTheCows';
+import VolunteerSpotlight from './VolunteerSpotlight';
 import VisitExperience from './VisitExperience';
 import BuildSanctuary from './BuildSanctuary';
 import GalleryPreview from './GalleryPreview';
@@ -17,6 +18,9 @@ export default function Home() {
       {/* Animal Stories */}
       <MeetTheCows />
 
+      {/* Volunteer Spotlight */}
+      <VolunteerSpotlight />
+
       {/* Experience Krishna Surbhi */}
       <VisitExperience />
 
@@ -29,7 +33,7 @@ export default function Home() {
       {/* Founder Message */}
       <FounderMessage />
 
-      {/* Donation CTA */}
+      {/* Real Work / Get Involved */}
       <SupportDonate />
     </>
   );

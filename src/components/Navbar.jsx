@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { NAV_LINKS } from '../data';
-import { useModal } from '../context/ModalContext';
 
 function CowLogo({ light }) {
   return (
@@ -19,7 +18,6 @@ function CowLogo({ light }) {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { openDonate } = useModal();
   const { pathname } = useLocation();
 
   const isHome = pathname === '/';
@@ -71,14 +69,14 @@ export default function Navbar() {
 
         {/* Right — outlined CTA box (Shakti-style) + mobile toggle */}
         <div className="flex items-center gap-3">
-          <button onClick={() => openDonate()}
+          <Link to="/visit"
             className={`hidden md:inline-flex items-center justify-center text-[10px] font-semibold tracking-[0.22em] uppercase px-6 py-3 border rounded-sm transition-all ${
               isTransparent
                 ? 'border-white/55 text-white hover:bg-white hover:text-forest-dark'
                 : 'border-forest/35 text-forest-dark hover:bg-forest hover:text-white hover:border-forest'
             }`}>
-            Donate
-          </button>
+            Visit Us
+          </Link>
           <button className="lg:hidden p-1.5" onClick={() => setMenuOpen(p => !p)} aria-label="Toggle menu">
             {menuOpen
               ? <X className={isTransparent ? 'text-white' : 'text-forest-dark'} size={22} />
@@ -99,9 +97,9 @@ export default function Navbar() {
                   {label}
                 </Link>
               ))}
-              <button onClick={() => openDonate()} className="mt-3 bg-saffron text-white text-sm font-semibold py-3.5 rounded-xl">
-                Donate Now
-              </button>
+              <Link to="/visit" className="mt-3 bg-saffron text-white text-sm font-semibold py-3.5 rounded-xl text-center">
+                Plan Your Visit
+              </Link>
             </div>
           </motion.div>
         )}

@@ -73,22 +73,24 @@ export default function Contact() {
               ))}
             </div>
 
-            {/* Map placeholder */}
-            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md bg-mint flex items-center justify-center">
-              <div className="text-center">
-                <div className="text-5xl mb-3">📍</div>
-                <div className="font-serif text-forest-dark text-lg">Krishna Surbhi Sanctuary</div>
-                <div className="text-forest/55 text-sm mt-1">New Delhi</div>
-                <a
-                  href="https://maps.google.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 mt-4 text-forest text-xs font-semibold border border-forest/25 px-4 py-2 rounded-full hover:bg-forest hover:text-white transition-all"
-                >
-                  Open in Google Maps ↗
-                </a>
-              </div>
+            {/* Map */}
+            <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-md relative">
+              <iframe
+                title="Krishna Surbhi Sanctuary location"
+                src="https://maps.google.com/maps?q=Sainik+Farm%2C+New+Delhi+110062%2C+India&z=13&output=embed"
+                className="absolute inset-0 w-full h-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
+            <a
+              href="https://maps.google.com/?q=Sainik+Farm,+New+Delhi+110062,+India"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 mt-4 text-forest text-xs font-semibold border border-forest/25 px-4 py-2 rounded-full hover:bg-forest hover:text-white transition-all"
+            >
+              Open in Google Maps ↗
+            </a>
           </FadeIn>
 
           {/* Right: form */}

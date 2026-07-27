@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import FadeIn from '../../components/FadeIn';
-import { useModal } from '../../context/ModalContext';
 import { ArrowRight } from 'lucide-react';
 
 const EXPERIENCE_CARDS = [
@@ -42,8 +41,6 @@ const EXPERIENCE_CARDS = [
 ];
 
 export default function VisitExperience() {
-  const { openDonate } = useModal();
-
   return (
     <section id="visit" className="pt-14 md:pt-16 pb-24 md:pb-32 scroll-mt-20 bg-cream">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -90,19 +87,20 @@ export default function VisitExperience() {
             </FadeIn>
           ))}
 
-          {/* Donate prompt fills the 6th cell */}
+          {/* Community prompt fills the 6th cell */}
           <FadeIn delay={0.16}>
             <div className="h-full min-h-[260px] rounded-xl bg-forest-dark flex flex-col items-center justify-center text-center p-8">
-              <h3 className="font-serif text-2xl text-white mb-3 leading-snug">Help us do more</h3>
+              <h3 className="font-serif text-2xl text-white mb-3 leading-snug">Come get involved</h3>
               <p className="text-white/65 text-sm leading-relaxed mb-6 max-w-xs">
-                Every experience funds rescue, care, and healing. Support a cow's lifelong sanctuary.
+                Tree plantation drives, cottages under construction, volunteers who show up again and
+                again — see how the sanctuary is really built.
               </p>
-              <button
-                onClick={() => openDonate()}
+              <Link
+                to="/support"
                 className="inline-flex items-center gap-2 bg-saffron text-white text-[11px] font-bold tracking-wider uppercase px-7 py-3.5 rounded-full hover:bg-saffron/85 active:scale-95 transition-all"
               >
-                Donate Now <ArrowRight size={13} />
-              </button>
+                See How to Help <ArrowRight size={13} />
+              </Link>
             </div>
           </FadeIn>
         </div>

@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useModal } from '../../context/ModalContext';
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -15,7 +14,6 @@ const SLIDES = [
 ];
 
 export default function HeroSection() {
-  const { openDonate } = useModal();
   const [idx, setIdx] = useState(0);
 
   const go = useCallback((dir) => setIdx((p) => (p + dir + SLIDES.length) % SLIDES.length), []);
@@ -107,10 +105,10 @@ export default function HeroSection() {
           <Link to="/visit" className="inline-flex items-center justify-center gap-2 bg-white text-forest-dark font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-cream transition-all shadow-lg">
             Plan Your Visit <ArrowRight size={13} />
           </Link>
-          <button onClick={() => openDonate()}
+          <Link to="/meet-the-cows"
             className="inline-flex items-center justify-center gap-2 border border-white/40 text-white text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-white/10 hover:border-white/70 transition-all">
-            Donate Now
-          </button>
+            Meet the Family
+          </Link>
         </motion.div>
       </div>
 

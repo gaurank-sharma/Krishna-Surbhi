@@ -9,6 +9,7 @@ export const NAV_LINKS = [
 
 export const COWS = [
   {
+    id: 'ganga',
     name: 'Ganga',
     age: '7 years',
     rescued: 'January 2019',
@@ -19,6 +20,7 @@ export const COWS = [
     palette: { bg: '#FFF8ED', bgEnd: '#FFECC8', accent: '#D4722A', tagBg: '#FDE8C0', tagText: '#8B4513' },
   },
   {
+    id: 'kamdhenu',
     name: 'Kamdhenu',
     age: '4 years',
     rescued: 'March 2021',
@@ -29,6 +31,7 @@ export const COWS = [
     palette: { bg: '#EEF8F0', bgEnd: '#C2E8CA', accent: '#2D6A4F', tagBg: '#D0EDD5', tagText: '#1B4332' },
   },
   {
+    id: 'savitri',
     name: 'Savitri',
     age: '5 years',
     rescued: 'August 2020',
@@ -39,6 +42,7 @@ export const COWS = [
     palette: { bg: '#FFF3F5', bgEnd: '#FFCCD5', accent: '#C2527A', tagBg: '#FFD5DE', tagText: '#8B2244' },
   },
   {
+    id: 'nandini',
     name: 'Nandini',
     age: '9 years',
     rescued: 'May 2018',
@@ -49,6 +53,7 @@ export const COWS = [
     palette: { bg: '#EDF5F8', bgEnd: '#B8D8E8', accent: '#2B6B8A', tagBg: '#C8DDE8', tagText: '#1A4D6B' },
   },
   {
+    id: 'lakshmi',
     name: 'Lakshmi',
     age: '3 years',
     rescued: 'November 2022',
@@ -59,6 +64,7 @@ export const COWS = [
     palette: { bg: '#FFFBEC', bgEnd: '#FFE8A0', accent: '#B8860B', tagBg: '#FFE5A0', tagText: '#7A5A00' },
   },
   {
+    id: 'rukmini',
     name: 'Rukmini',
     age: '6 years',
     rescued: 'July 2020',
@@ -69,6 +75,7 @@ export const COWS = [
     palette: { bg: '#F5EFF8', bgEnd: '#DCC8EC', accent: '#7B4FA0', tagBg: '#E0D0F0', tagText: '#4A2878' },
   },
   {
+    id: 'dharini',
     name: 'Dharini',
     age: '8 years',
     rescued: 'February 2019',
@@ -79,6 +86,7 @@ export const COWS = [
     palette: { bg: '#F8F2EC', bgEnd: '#E8D4BC', accent: '#8B5E3C', tagBg: '#E8D5C0', tagText: '#6B3E20' },
   },
   {
+    id: 'surabhi',
     name: 'Surabhi',
     age: '5 years',
     rescued: 'April 2021',
@@ -88,7 +96,70 @@ export const COWS = [
     image: 'https://media.istockphoto.com/id/937024792/photo/cow-on-green-field.jpg?s=612x612&w=0&k=20&c=CNdqxhUlDf5SOZOzMkUuJ_OTPSA1rUg_Q8FT5N5S2nw=',
     palette: { bg: '#EDF8F4', bgEnd: '#B8E8D4', accent: '#2D7A5F', tagBg: '#C0E8D5', tagText: '#1A5A40' },
   },
+  // ── Real residents named by the client (July 2026 handover) ──
+  // Placeholder entries: ages/rescue dates/full photos pending the on-site visit.
+  // Replace `image` and `fullStory` once real material is captured.
+  {
+    id: 'durga',
+    name: 'Durga',
+    age: 'Details pending',
+    rescued: 'Details pending',
+    tag: 'Real Resident',
+    isPlaceholder: true,
+    story: 'One of the real, resident cows at Krishna Surbhi. Her full story is being documented during our next on-site visit — check back soon for her photos and journey.',
+    fullStory: '[Placeholder] Durga\'s complete story, photos, and rescue details will be added after the team\'s upcoming visit to the Rajasthan sanctuary.',
+    image: '/placeholder-cow.jpg',
+    palette: { bg: '#F8F2EC', bgEnd: '#E8D4BC', accent: '#8B5E3C', tagBg: '#E8D5C0', tagText: '#6B3E20', emoji: '🐄' },
+  },
+  {
+    id: 'channi',
+    name: 'Channi',
+    age: 'Details pending',
+    rescued: 'Details pending',
+    tag: 'Real Resident',
+    isPlaceholder: true,
+    story: 'One of the real, resident cows at Krishna Surbhi. Her full story is being documented during our next on-site visit — check back soon for her photos and journey.',
+    fullStory: '[Placeholder] Channi\'s complete story, photos, and rescue details will be added after the team\'s upcoming visit to the Rajasthan sanctuary.',
+    image: '/placeholder-cow.jpg',
+    palette: { bg: '#FFFBEC', bgEnd: '#FFE8A0', accent: '#B8860B', tagBg: '#FFE5A0', tagText: '#7A5A00', emoji: '🐄' },
+  },
+  {
+    id: 'saraswati',
+    name: 'Saraswati',
+    age: 'Details pending',
+    rescued: 'Details pending',
+    tag: 'Blind & Beloved',
+    isPlaceholder: true,
+    story: 'Saraswati is blind, and the sanctuary\'s caretakers have built a routine of touch, voice, and trust around her so she moves through her days with confidence and care.',
+    fullStory: '[Placeholder] Saraswati is one of our blind residents. Her full story — how the caretaking team adapted their approach for her — and real photos will be added after the team\'s upcoming visit to the Rajasthan sanctuary.',
+    image: '/placeholder-cow.jpg',
+    palette: { bg: '#F5EFF8', bgEnd: '#DCC8EC', accent: '#7B4FA0', tagBg: '#E0D0F0', tagText: '#4A2878', emoji: '🐄' },
+  },
+  {
+    id: 'ashutosh',
+    name: 'Ashutosh',
+    age: 'Details pending',
+    rescued: 'Details pending',
+    tag: 'Resilient Survivor',
+    isPlaceholder: true,
+    story: 'Ashutosh lives with a leg amputation, and moves through the sanctuary with a resilience that visitors and volunteers find deeply moving.',
+    fullStory: '[Placeholder] Ashutosh lost a leg before arriving at the sanctuary. His full recovery and daily-life story, along with real photos, will be added after the team\'s upcoming visit to the Rajasthan sanctuary.',
+    image: '/placeholder-cow.jpg',
+    palette: { bg: '#EDF5F8', bgEnd: '#B8D8E8', accent: '#2B6B8A', tagBg: '#C8DDE8', tagText: '#1A4D6B', emoji: '🐄' },
+  },
 ];
+
+// ── Volunteer spotlight (July 2026 handover) ──
+// Placeholder: real photo, full interview, and name pending the founder's on-site visit.
+// Rakhi specifically asked for a dedicated profile page for this story (see VolunteerProfile page).
+export const VOLUNTEER_SPOTLIGHT = {
+  id: 'uncle',
+  name: 'Uncle',
+  descriptor: '71, Cancer Survivor & Volunteer',
+  isPlaceholder: true,
+  quote: 'He drives to the sanctuary alone to plant trees — giving his time and energy without expecting anything in return.',
+  story: 'A 71-year-old cancer survivor who drives to Krishna Surbhi by himself to take part in tree plantation drives — one of several long-time supporters, alongside another volunteer who recently reconnected to offer his time, who give freely because they believe in this place. This is the spirit we want every visitor to feel: an open, welcoming community of people who choose to show up.',
+};
 
 export const EXPERIENCES = [
   {

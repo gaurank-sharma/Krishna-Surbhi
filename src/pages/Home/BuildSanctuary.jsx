@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import FadeIn from '../../components/FadeIn';
-import { useModal } from '../../context/ModalContext';
 import { ArrowRight } from 'lucide-react';
 
 const CONTRIBUTIONS = [
@@ -27,8 +26,6 @@ const CONTRIBUTIONS = [
 ];
 
 export default function BuildSanctuary() {
-  const { openDonate } = useModal();
-
   return (
     <section className="py-24 md:py-32 px-6 md:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -82,12 +79,12 @@ export default function BuildSanctuary() {
             >
               Contribute Your Skills <ArrowRight size={14} />
             </Link>
-            <button
-              onClick={() => openDonate()}
+            <Link
+              to="/support"
               className="inline-flex items-center justify-center gap-2 border border-forest/30 text-forest font-semibold text-[11px] tracking-wider uppercase px-8 py-4 rounded-full hover:bg-forest hover:text-white transition-all"
             >
-              Support the Sanctuary
-            </button>
+              See Ways to Help
+            </Link>
           </div>
         </FadeIn>
       </div>
