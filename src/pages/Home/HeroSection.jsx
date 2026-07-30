@@ -45,18 +45,18 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-transparent to-black/75" />
       </div>
 
-      {/* ── Slider arrows ── */}
+      {/* ── Slider arrows (hidden on mobile — overlap the copy in the small viewport) ── */}
       <button
         onClick={() => go(-1)}
         aria-label="Previous"
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full border border-white/30 text-white/80 flex items-center justify-center backdrop-blur-sm hover:bg-white/15 hover:text-white transition-all"
+        className="hidden md:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full border border-white/30 text-white/80 items-center justify-center backdrop-blur-sm hover:bg-white/15 hover:text-white transition-all"
       >
         <ChevronLeft size={20} />
       </button>
       <button
         onClick={() => go(1)}
         aria-label="Next"
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full border border-white/30 text-white/80 flex items-center justify-center backdrop-blur-sm hover:bg-white/15 hover:text-white transition-all"
+        className="hidden md:flex absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full border border-white/30 text-white/80 items-center justify-center backdrop-blur-sm hover:bg-white/15 hover:text-white transition-all"
       >
         <ChevronRight size={20} />
       </button>

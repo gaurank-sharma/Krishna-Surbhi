@@ -32,7 +32,9 @@ export default function MeetTheCows() {
               <div className="w-8 h-px bg-forest" />
             </div>
             <h2 className="font-serif text-4xl md:text-5xl text-forest-dark leading-tight">
-              Every rescue is a <em className="italic text-forest">journey of hope</em>
+              Every rescue is a
+              <br />
+              <em className="italic text-forest">Journey of Hope</em>
             </h2>
           </div>
         </FadeIn>
@@ -89,13 +91,13 @@ export default function MeetTheCows() {
               </div>
             </div>
 
-            {/* Arrows */}
+            {/* Arrows (hidden on mobile — overlap the story copy in the small viewport) */}
             <button onClick={() => go(-1)} aria-label="Previous story"
-              className="absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full border border-white/30 text-white/80 flex items-center justify-center backdrop-blur-sm hover:bg-white/15 hover:text-white transition-all">
+              className="hidden md:flex absolute left-4 md:left-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full border border-white/30 text-white/80 items-center justify-center backdrop-blur-sm hover:bg-white/15 hover:text-white transition-all">
               <ChevronLeft size={20} />
             </button>
             <button onClick={() => go(1)} aria-label="Next story"
-              className="absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full border border-white/30 text-white/80 flex items-center justify-center backdrop-blur-sm hover:bg-white/15 hover:text-white transition-all">
+              className="hidden md:flex absolute right-4 md:right-6 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full border border-white/30 text-white/80 items-center justify-center backdrop-blur-sm hover:bg-white/15 hover:text-white transition-all">
               <ChevronRight size={20} />
             </button>
 
